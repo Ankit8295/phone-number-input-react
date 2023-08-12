@@ -1,13 +1,17 @@
 {
   "name": "phone-number-input-react",
+  "private": false,
   "version": "1.0.0",
   "description": "A phone number input component for react js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist"
   ],
-  "main": "src/index.ts",
   "scripts": {
-    "build": "vite build && tsc"
+    "build": "vite build && tsc",
+    "exit 0": ""
   },
   "author": "Ankit Kumar",
   "license": "MIT",
@@ -23,5 +27,8 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "@ankit8295:registry": "https://npm.pkg.github.com"
   }
 }
