@@ -1,5 +1,8 @@
 {
-  "name": "phone-number-react-input",
+  "name": "react-phone-number-input",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ankit8295"
+  },
   "private": false,
   "version": "1.0.0",
   "description": "A phone number input component for react js",
