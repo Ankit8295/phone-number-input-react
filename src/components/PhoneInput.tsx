@@ -1,15 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import countriesData from "../lib/countriesData.json";
-import "./styles.css";
-
-export type CountryType = {
-  country?: string;
-  capital?: string[];
-  dial_code?: string;
-  region?: string;
-  flag?: string;
-  phoneLength?: string;
-};
+import "./styles.scss";
+import { CountryType, countriesData } from "./countriesData";
 
 export interface IPhoneInputProps
   extends React.DetailedHTMLProps<
@@ -25,7 +16,7 @@ export interface IPhoneInputProps
   validation?: boolean;
 }
 
-export const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
+const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
   const {
     labelStyles,
     inputStyles,
@@ -45,7 +36,7 @@ export const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
 
   const filterCountriesData = searchedCountry
     ? countriesData.filter((country) =>
-        country.country.toLowerCase().includes(searchedCountry.toLowerCase())
+        country.country?.toLowerCase().includes(searchedCountry.toLowerCase())
       )
     : countriesData;
 
@@ -83,22 +74,21 @@ export const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
   }
 
   useEffect(() => {
-    if (show) {
-      const handleDomClick = (e: any) => {
-        e.stopPropagation();
+    const handleDomClick = (e: any) => {
+      e.stopPropagation();
+      if (show) {
         if (
           !dropDownNode.current?.contains(e.target) &&
           e.target !== dropDownNode.current
         ) {
           setShow(false);
         }
-      };
-
-      document.addEventListener("click", handleDomClick);
-      return () => {
-        document.removeEventListener("click", handleDomClick);
-      };
-    }
+      }
+    };
+    document.addEventListener("click", handleDomClick);
+    return () => {
+      document.removeEventListener("click", handleDomClick);
+    };
   }, [show]);
 
   return (
@@ -125,7 +115,7 @@ export const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
               />
             </label>
 
-            {filterCountriesData.map((country, i) => (
+            {filterCountriesData.map((country) => (
               <div onClick={() => selectCountry(country)} key={country.country}>
                 <img
                   src={country.flag}
@@ -171,3 +161,4 @@ export const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
     </div>
   );
 };
+export default PhoneInput;

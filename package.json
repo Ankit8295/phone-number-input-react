@@ -3,33 +3,36 @@
   "private": false,
   "version": "1.0.0",
   "description": "A phone number input component for react js",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "dist",
-    "dist/style.css"
+    "dist"
   ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build && tsc",
-    "exit 0": ""
+    "rollup": "rollup -c"
   },
+  "type": "module",
   "author": "Ankit Kumar",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@rollup/plugin-typescript": "^11.1.2",
     "@types/node": "^20.4.10",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "rollup": "^3.28.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-sass": "^1.12.20",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "publishConfig": {
-    "@ankit8295:registry": "https://npm.pkg.github.com"
   }
 }
