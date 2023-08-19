@@ -1,5 +1,5 @@
 {
-  "name": "phone-number-input-react",
+  "name": "phone-number-react-input",
   "private": false,
   "version": "1.0.0",
   "description": "A phone number input component for react js",
@@ -28,6 +28,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.28.0",
     "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-sass": "^1.12.20",
     "typescript": "^5.1.6"
   },

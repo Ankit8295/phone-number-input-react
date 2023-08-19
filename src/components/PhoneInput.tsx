@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import "./styles.scss";
+import "./styles.css";
 import { CountryType, countriesData } from "./countriesData";
 
 export interface IPhoneInputProps

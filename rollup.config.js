@@ -1,4 +1,4 @@
-import sass from "rollup-plugin-sass";
+import postcss from "rollup-plugin-postcss";
 import packageJson from "./package.json" assert { type: "json" };
 import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
@@ -23,13 +23,14 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      postcss(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      sass({ insert: true }),
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: [/\.css$/],
   },
 ];

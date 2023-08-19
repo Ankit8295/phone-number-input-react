@@ -15,9 +15,9 @@
   padding: 0.25em;
   outline: 1px solid transparent;
   background: white;
-  &:focus-within {
-    outline-color: black;
-  }
+}
+.phone_input-container:focus-within {
+  outline-color: black;
 }
 .flag_dropDown {
   position: absolute;
@@ -31,24 +31,6 @@
   z-index: 10;
   min-width: 320px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  &::-webkit-scrollbar {
-    width: 4px;
-    background-color: #e2e2e2;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #919191;
-    border-radius: 2em;
-  }
-  div {
-    display: flex;
-    align-items: center;
-    padding: 0.5em;
-    gap: 0.5em;
-    cursor: pointer;
-    &:hover {
-      background-color: rgb(237, 237, 237);
-    }
-  }
 }
 .flag_dropDown-searchbar {
   width: 100%;
@@ -60,13 +42,35 @@
   top: 0;
   font-size: medium;
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-  & > input {
-    outline: none;
-    padding: 0.5em;
-    border: none;
-    width: 100%;
-  }
 }
+.flag_dropDown-searchbar > input {
+  outline: none;
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+}
+
+.flag_dropDown::-webkit-scrollbar {
+  width: 4px;
+  background-color: #e2e2e2;
+}
+
+.flag_dropDown::-webkit-scrollbar-thumb {
+  background-color: #919191;
+  border-radius: 2em;
+}
+.flag_dropDown div {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.flag_dropDown div:hover {
+  background-color: rgb(237, 237, 237);
+}
+
 .flag_container {
   align-self: stretch;
   display: flex;
@@ -78,11 +82,13 @@
   cursor: pointer;
   min-width: max-content;
   border-right: 1px solid rgba(0, 0, 0, 0.5);
-  span {
-    white-space: nowrap;
-    padding-right: 0.2rem;
-  }
 }
+
+.flag_container span {
+  white-space: nowrap;
+  padding-right: 0.2rem;
+}
+
 .input {
   width: 100%;
   outline: none;
@@ -92,9 +98,11 @@
   appearance: none;
   background: white;
 }
+
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 .error_phone_input {
   color: red;
   text-transform: capitalize;
