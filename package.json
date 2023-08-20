@@ -1,5 +1,5 @@
 {
-  "name": "react-phone-number-input",
+  "name": "@ankit8295/phone-number-react-input",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/ankit8295"
   },
