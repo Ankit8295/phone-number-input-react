@@ -1,12 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { ComponentProps, useEffect, useRef, useState } from "react";
+import { CountryType, countriesData } from "./countriesDara";
 import "./styles.css";
-import { CountryType, countriesData } from "./countriesData";
 
-export interface IPhoneInputProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+export interface IPhoneInputProps extends ComponentProps<"input"> {
   labelStyles?: string;
   inputStyles?: string;
   label?: string;
@@ -16,7 +12,7 @@ export interface IPhoneInputProps
   validation?: boolean;
 }
 
-const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
+export const PhoneInput = (props: IPhoneInputProps) => {
   const {
     labelStyles,
     inputStyles,
@@ -161,4 +157,3 @@ const PhoneInput: React.FC<IPhoneInputProps> = (props) => {
     </div>
   );
 };
-export default PhoneInput;

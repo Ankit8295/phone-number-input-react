@@ -1,1 +1,1 @@
-export { default as PhoneInput } from "./components";
+export * from "./mobile-input";
